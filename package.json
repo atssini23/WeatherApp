@@ -5,9 +5,12 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "react-scripts": "3.0.1"
+    "create-react-class": "15.6.3",
+    "react": "^16.12.0",
+    "react-components": "0.5.1",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.0.1",
+    "register-service-worker": "1.6.2"
   },
   "devDependencies": {
     "typescript": "3.3.3"

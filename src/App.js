@@ -1,14 +1,13 @@
 import React from "react";
-
 import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather.js";
 import "./styles.css";
-import { render } from "react-dom";
 
 const API_KEY = "494f238602ea502b5f5e150131a29438";
 
-export default function App() {
+class App extends React.Component {
+  //export default function App() {
   state = {
     temperature: undefined,
     city: undefined,
@@ -28,22 +27,28 @@ export default function App() {
     const data = await api_call.json();
     console.log(data);
     this.setState({
-      temperature: data.main.temp
+      temperature: data.main.temp,
+      city: data.name,
+      country: data.sys.counrty,
+      humidity: data.main.humidity,
+      description: data.weather[0].description
     });
   };
-
-  return (
-    <div className="App">
-      <Titles />
-      <Form getWeather={this.getWeather} />
-      <Weather
-        temperature={this.state.temperature}
-        city={this.state.city}
-        country={this.state.country}
-        humidity={this.state.humidity}
-        description={this.state.description}
-        error={this.state.error}
-      />
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <Titles />
+        <Form getWeather={this.getWeather} />
+        <Weather
+          temperature={this.state.temperature}
+          city={this.state.city}
+          country={this.state.country}
+          humidity={this.state.humidity}
+          description={this.state.description}
+          error={this.state.error}
+        />
+      </div>
+    );
+  }
 }
+export default App;

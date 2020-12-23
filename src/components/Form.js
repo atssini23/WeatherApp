@@ -1,7 +1,7 @@
 import React from "react";
 
 //class Form extends React.Component {
-const Form = props => (
+const Form = (props) => (
   //render() {
   //return (
   <form onSubmit={props.getWeather}>

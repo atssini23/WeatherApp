@@ -3,7 +3,8 @@ import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather.js";
 
-const API_KEY = hidden https://openweathermap.org/api;
+const API_KEY = `494f238602ea502b5f5e150131a29438`;
+//const API_KEY = hidden https://openweathermap.org/api;
 
 class App extends React.Component {
   //export default function App() {
@@ -15,7 +16,7 @@ class App extends React.Component {
     description: undefined,
     error: undefined
   };
-  getWeather = async e => {
+  getWeather = async (e) => {
     e.preventDefault();
 
     const city = e.target.elements.city.value;
